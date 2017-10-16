@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Button from 'react-bootstrap/lib/Button';
+//import { Button } from 'react-bootstrap';
 
 class QuotesDisplay extends React.Component {  
   constructor (props) {
@@ -48,10 +50,10 @@ class QuotesDisplay extends React.Component {
       <div style={{
     margin: 'auto',
     maxWidth: 500}}>
-        <button onClick={this.previous}>
+        <Button onClick={this.previous}>
           Previous
-        </button>
-        <button onClick={this.next} style={{float: 'right'}}>
+        </Button>
+        <button className='btn float-right' onClick={this.next} style={{float: 'right'}}>
           Next
         </button>
         <p>{this.state.id}</p>
