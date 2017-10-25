@@ -4,11 +4,29 @@
     <title>Wrcsm</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application', media: 'all' %>
   </head>
 
   <body>
-    <%= yield %>
+  	<div class="container">
+			<%= content_tag :div,
+			  id: "navContainer",
+			  data: {}.to_json do %>
+			<% end %>
+			<%= javascript_pack_tag 'nav' %>
+      <%# user is logged in, show log out link %>
+      <% if current_user.present? %>
+        <%# link_to "#{current_user.email} (Sign Out)", destroy_user_session_path, :method => :delete %>
+        <%= button_to "#{current_user.email} (Sign Out)", destroy_user_session_path, method: :delete %>
+      <%# user is not logged in, show signup and login links %>
+      <% else %>
+        <%= button_to 'Sign In', new_user_session_path, :method => :post  %> |
+        <%= link_to 'Register Now!', new_user_registration_path %>
+      <% end %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+  		<%= yield %>
+    </div>
   </body>
 </html>
