@@ -33,4 +33,4 @@ Quote.create! (
     }
   ]
 )
-puts "Quotes seeded!"
+puts "Quotes seeded!"AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

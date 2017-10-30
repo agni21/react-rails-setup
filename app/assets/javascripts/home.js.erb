@@ -1,2 +1,2 @@
-var dp="<%= destroy_user_session_path %>";
+var dp='<%= ActionController::Base.helpers.link_to "Book Now!", Rails.application.routes.url_helpers.destroy_user_session_path, className: "btn btn-book", method: :delete %>';
 console.log(dp);

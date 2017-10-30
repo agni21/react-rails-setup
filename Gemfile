@@ -36,6 +36,13 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'devise'
 
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'cancancan'
+#gem 'draper'
+#gem 'pundit'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
