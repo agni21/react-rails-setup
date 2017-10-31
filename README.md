@@ -19,6 +19,23 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Deployment instructions
 
-* ...
+```sh
+$ bundle install
+
+$ yarn install
+
+$ rails db:migrate
+
+$ rails db:seed
+```
+Run webpack and rails server
+```
+$ bin/webpack-dev-server
+
+$ rails s
+```
+
+ActiveAdmin default User:
+* email: 'admin@example.com', password: 'password'
